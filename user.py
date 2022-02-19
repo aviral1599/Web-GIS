@@ -10,9 +10,17 @@ def printtweetdata(n, ith_tweet):
 	print(f"Tweet Text:{ith_tweet[3]}")
 	print(f"Hashtags Used:{ith_tweet[4]}")
  
-def scrape(words, date_since, numtweet):
+def scrape(words, date_since, numtweet,userID):
     db = pd.DataFrame(columns=['username','description','location','text','hashtags'])
-    tweets = tweepy.Cursor(api.search_tweets,words, geocode = "28.7041,77.1025,3000km",lang="en",since_id=date_since,tweet_mode='extended').items(numtweet)
+    #tweets = tweepy.Cursor(api.search_tweets,words, geocode = "28.7041,77.1025,3000km",lang="en",since_id=date_since,tweet_mode='extended').items(numtweet)
+    tweets = api.user_timeline(screen_name=userID, 
+                           # 200 is the maximum allowed count
+                           count=200,
+                           include_rts = False,
+                           # Necessary to keep full_text 
+                           # otherwise only the first 140 words are extracted
+                           tweet_mode = 'extended'
+                           )
     # tweets = tweepy.Paginator(client.search_recent_tweets, query=words,max_results=numtweet, limit=5)
     #tweets = client.search_recent_tweets(query=words, max_results=numtweet)
 
@@ -49,7 +57,7 @@ def scrape(words, date_since, numtweet):
         # Function call to print tweet data on screen
         printtweetdata(i, ith_tweet)
         i = i+1
-    filename = 'scraped_tweets.csv'
+    filename = 'user_scraped_tweets.csv'
     print("Hello")
     # we will save our database as a CSV file.
     db.to_csv(filename)
@@ -75,6 +83,6 @@ if __name__ == '__main__':
     date_since = "2020-01-01"
 
     # number of tweets you want to extract in one run
-    numtweet = 1000
-    scrape(words, date_since, numtweet)
+    numtweet = 100
+    scrape(words, date_since, numtweet,userID="IndiaToday")
     print('Scraping has completed!')
