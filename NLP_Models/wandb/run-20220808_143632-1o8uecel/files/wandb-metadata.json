@@ -1,0 +1,15 @@
+{
+    "os": "Windows-10-10.0.19044-SP0",
+    "python": "3.9.6",
+    "heartbeatAt": "2022-08-08T09:06:36.457210",
+    "startedAt": "2022-08-08T09:06:32.150232",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "<python with no main file>",
+    "host": "DESKTOP-S0A5J6H",
+    "username": "SHASHWAT",
+    "executable": "c:\\Users\\SHASHWAT\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
+}

@@ -1,0 +1,9 @@
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+tokenizer outputs:  dict_keys(['input_ids', 'attention_mask'])
+Average Token count: 16.729944886711575
+Average Token count: 16.729944886711575
+Average Token count: 16.729944886711575
+Average Token count: 16.729944886711575
