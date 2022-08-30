@@ -1,0 +1,15 @@
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name       | Type                          | Params
+-------------------------------------------------------------
+0 | bert       | BertForSequenceClassification | 109 M
+1 | classifier | Linear                        | 7.7 K
+2 | criterion  | BCEWithLogitsLoss             | 0
+-------------------------------------------------------------
+109 M     Trainable params
+0         Non-trainable params
+109 M     Total params
+437.966   Total estimated model params size (MB)
+Created 3 datasets

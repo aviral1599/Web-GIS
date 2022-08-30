@@ -1,0 +1,17 @@
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+C:\Users\Aviral\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\pytorch_lightning\trainer\configuration_validator.py:115: UserWarning: You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.
+  rank_zero_warn("You passed in a `val_dataloader` but have no `validation_step`. Skipping val loop.")
+  | Name       | Type                          | Params
+-------------------------------------------------------------
+0 | bert       | BertForSequenceClassification | 109 M
+1 | classifier | Linear                        | 7.7 K
+2 | criterion  | BCEWithLogitsLoss             | 0
+-------------------------------------------------------------
+109 M     Trainable params
+0         Non-trainable params
+109 M     Total params
+437.966   Total estimated model params size (MB)
+Created 3 datasets
