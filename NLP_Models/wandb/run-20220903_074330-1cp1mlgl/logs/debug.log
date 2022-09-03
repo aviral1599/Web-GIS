@@ -1,0 +1,31 @@
+2022-09-03 07:43:30,688 INFO    MainThread:18420 [wandb_setup.py:_flush():76] Configure stats pid to 18420
+2022-09-03 07:43:30,690 INFO    MainThread:18420 [wandb_setup.py:_flush():76] Loading settings from C:\Users\Aviral\.config\wandb\settings
+2022-09-03 07:43:30,691 INFO    MainThread:18420 [wandb_setup.py:_flush():76] Loading settings from e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\settings
+2022-09-03 07:43:30,691 INFO    MainThread:18420 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'_require_service': 'True'}
+2022-09-03 07:43:30,692 INFO    MainThread:18420 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2022-09-03 07:43:30,693 INFO    MainThread:18420 [wandb_init.py:_log_setup():461] Logging user logs to e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220903_074330-1cp1mlgl\logs\debug.log
+2022-09-03 07:43:30,694 INFO    MainThread:18420 [wandb_init.py:_log_setup():462] Logging internal logs to e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220903_074330-1cp1mlgl\logs\debug-internal.log
+2022-09-03 07:43:30,695 INFO    MainThread:18420 [wandb_init.py:_jupyter_setup():411] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x00000243F31EF7C0>
+2022-09-03 07:43:30,698 INFO    MainThread:18420 [wandb_init.py:init():495] calling init triggers
+2022-09-03 07:43:30,698 INFO    MainThread:18420 [wandb_init.py:init():498] wandb.init called with sweep_config: {}
+config: {}
+2022-09-03 07:43:30,699 INFO    MainThread:18420 [wandb_init.py:init():548] starting backend
+2022-09-03 07:43:30,699 INFO    MainThread:18420 [wandb_init.py:init():552] setting up manager
+2022-09-03 07:43:30,754 INFO    MainThread:18420 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=spawn, using: spawn
+2022-09-03 07:43:30,843 INFO    MainThread:18420 [wandb_init.py:init():558] backend started and connected
+2022-09-03 07:43:31,165 INFO    MainThread:18420 [wandb_run.py:_label_probe_notebook():1105] probe notebook
+2022-09-03 07:43:31,173 INFO    MainThread:18420 [wandb_run.py:_label_probe_notebook():1115] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2022-09-03 07:43:31,174 INFO    MainThread:18420 [wandb_init.py:init():636] updated telemetry
+2022-09-03 07:43:31,501 INFO    MainThread:18420 [wandb_init.py:init():667] communicating run to backend with 30 second timeout
+2022-09-03 07:43:37,143 INFO    MainThread:18420 [wandb_run.py:_on_init():1982] communicating current version
+2022-09-03 07:43:38,366 INFO    MainThread:18420 [wandb_run.py:_on_init():1986] got version response upgrade_message: "wandb version 0.13.2 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2022-09-03 07:43:38,367 INFO    MainThread:18420 [wandb_init.py:init():700] starting run threads in backend
+2022-09-03 07:43:43,214 INFO    MainThread:18420 [wandb_run.py:_console_start():1962] atexit reg
+2022-09-03 07:43:43,215 INFO    MainThread:18420 [wandb_run.py:_redirect():1820] redirect: SettingsConsole.WRAP_RAW
+2022-09-03 07:43:43,217 INFO    MainThread:18420 [wandb_run.py:_redirect():1885] Wrapping output streams.
+2022-09-03 07:43:43,218 INFO    MainThread:18420 [wandb_run.py:_redirect():1907] Redirects installed.
+2022-09-03 07:43:43,222 INFO    MainThread:18420 [wandb_init.py:init():732] run started, returning control to user process
+2022-09-03 07:43:43,787 INFO    MainThread:18420 [wandb_init.py:_pause_backend():374] pausing backend
+2022-09-03 07:43:43,787 INFO    MainThread:18420 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-09-03 07:43:53,934 INFO    MainThread:18420 [wandb_init.py:_resume_backend():383] resuming backend
