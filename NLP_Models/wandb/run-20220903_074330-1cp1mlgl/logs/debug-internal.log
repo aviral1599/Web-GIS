@@ -57,3 +57,6 @@
 2022-09-03 07:45:04,677 DEBUG   SenderThread:18796 [sender.py:send_request():316] send_request: stop_status
 2022-09-03 07:45:17,210 WARNING StreamThr :18796 [internal.py:is_dead():387] Internal process exiting, parent pid 18420 disappeared
 2022-09-03 07:45:17,211 ERROR   StreamThr :18796 [internal.py:wandb_internal():149] Internal process shutdown.
+2022-09-03 07:45:17,698 INFO    WriterThread:18796 [datastore.py:close():279] close: e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220903_074330-1cp1mlgl\run-1cp1mlgl.wandb
+2022-09-03 07:45:17,754 INFO    SenderThread:18796 [sender.py:finish():1312] shutting down sender
+2022-09-03 07:45:17,757 INFO    MainThread:18796 [internal.py:handle_exit():80] Internal process exited
