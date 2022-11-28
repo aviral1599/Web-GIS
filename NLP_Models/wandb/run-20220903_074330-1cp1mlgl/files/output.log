@@ -1,0 +1,14 @@
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name       | Type                            | Params
+---------------------------------------------------------------
+0 | bert       | AlbertForSequenceClassification | 222 M
+1 | classifier | Linear                          | 41.0 K
+2 | criterion  | BCEWithLogitsLoss               | 0
+---------------------------------------------------------------
+222 M     Trainable params
+0         Non-trainable params
+222 M     Total params
+890.579   Total estimated model params size (MB)

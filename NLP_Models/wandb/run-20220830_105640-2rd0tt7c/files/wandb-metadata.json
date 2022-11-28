@@ -1,0 +1,23 @@
+{
+    "os": "Windows-10-10.0.22000-SP0",
+    "python": "3.9.13",
+    "heartbeatAt": "2022-08-30T05:26:48.062408",
+    "startedAt": "2022-08-30T05:26:40.964812",
+    "docker": null,
+    "gpu": "NVIDIA GeForce MX230",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/aviral1599/Web-GIS.git",
+        "commit": "8e06002a2b527ea2504e02c4f4d714a68f5f1f4b"
+    },
+    "email": "abatra_be19@thapar.edu",
+    "root": "E:/Sem 6/Capstone/CAPSTONE",
+    "host": "LAPTOP-U9L25BP4",
+    "username": "Aviral",
+    "executable": "C:\\Users\\Aviral\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\\python.exe"
+}

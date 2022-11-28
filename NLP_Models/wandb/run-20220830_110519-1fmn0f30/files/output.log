@@ -1,0 +1,85 @@
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Created 3 datasets
+Sanity Checking: 0it [00:00, ?it/s]
+  | Name       | Type                          | Params
+-------------------------------------------------------------
+0 | bert       | BertForSequenceClassification | 109 M
+1 | classifier | Linear                        | 7.7 K
+2 | criterion  | BCEWithLogitsLoss             | 0
+-------------------------------------------------------------
+109 M     Trainable params
+0         Non-trainable params
+109 M     Total params
+437.966   Total estimated model params size (MB)
+C:\Users\Aviral\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:219: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 8 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+
+Sanity Checking: 0it [00:00, ?it/s]Created 3 datasets
+  | Name       | Type                          | Params
+-------------------------------------------------------------
+0 | bert       | BertForSequenceClassification | 109 M
+1 | classifier | Linear                        | 7.7 K
+2 | criterion  | BCEWithLogitsLoss             | 0
+-------------------------------------------------------------
+109 M     Trainable params
+0         Non-trainable params
+109 M     Total params
+437.966   Total estimated model params size (MB)
+C:\Users\Aviral\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:219: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 8 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\Aviral\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\pytorch_lightning\loggers\wandb.py:351: UserWarning: There is a wandb run already in progress and newly created instances of `WandbLogger` will reuse this run. If this is not desired, call `wandb.finish()` before instantiating `WandbLogger`.
+  rank_zero_warn(
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Created 3 datasets
+Sanity Checking: 0it [00:00, ?it/s]
+  | Name       | Type                          | Params
+-------------------------------------------------------------
+0 | bert       | BertForSequenceClassification | 109 M
+1 | classifier | Linear                        | 7.7 K
+2 | criterion  | BCEWithLogitsLoss             | 0
+-------------------------------------------------------------
+109 M     Trainable params
+0         Non-trainable params
+109 M     Total params
+437.966   Total estimated model params size (MB)
+C:\Users\Aviral\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:219: PossibleUserWarning: The dataloader, val_dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 8 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+Sanity Checking: 0it [00:00, ?it/s]Created 3 datasets
+Sanity Checking: 0it [00:00, ?it/s]
+  | Name       | Type                          | Params
+-------------------------------------------------------------
+0 | bert       | BertForSequenceClassification | 109 M
+1 | classifier | Linear                        | 7.7 K
+2 | criterion  | BCEWithLogitsLoss             | 0
+-------------------------------------------------------------
+109 M     Trainable params
+0         Non-trainable params
+109 M     Total params
+437.966   Total estimated model params size (MB)
+Downloading vocab.txt: 100%|██████████| 226k/226k [00:01<00:00, 173kB/s]
+Downloading special_tokens_map.json: 100%|██████████| 112/112 [00:00<00:00, 16.0kB/s]
+Downloading tokenizer_config.json: 100%|██████████| 48.0/48.0 [00:00<00:00, 9.82kB/s]
+GPU available: False, used: False:   0%|          | 0.00/48.0 [00:00<?, ?B/s]
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+Sanity Checking: 0it [00:00, ?it/s]Created 3 datasets
+Sanity Checking: 0it [00:00, ?it/s]
+  | Name       | Type                          | Params
+-------------------------------------------------------------
+0 | bert       | BertForSequenceClassification | 109 M
+1 | classifier | Linear                        | 7.7 K
+2 | criterion  | BCEWithLogitsLoss             | 0
+-------------------------------------------------------------
+109 M     Trainable params
+0         Non-trainable params
+109 M     Total params
+437.966   Total estimated model params size (MB)
+C:\Users\Aviral\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:466: PossibleUserWarning: Your `val_dataloader`'s sampler has shuffling enabled, it is strongly recommended that you turn shuffling off for val/test/predict dataloaders.

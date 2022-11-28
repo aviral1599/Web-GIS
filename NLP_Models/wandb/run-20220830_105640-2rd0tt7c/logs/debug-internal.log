@@ -1,0 +1,63 @@
+2022-08-30 10:56:41,700 INFO    StreamThr :11216 [internal.py:wandb_internal():90] W&B internal server running at pid: 11216, started at: 2022-08-30 10:56:41.697814
+2022-08-30 10:56:41,706 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: status
+2022-08-30 10:56:44,588 DEBUG   SenderThread:11216 [sender.py:send_request():316] send_request: status
+2022-08-30 10:56:44,602 INFO    WriterThread:11216 [datastore.py:open_for_write():75] open: e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220830_105640-2rd0tt7c\run-2rd0tt7c.wandb
+2022-08-30 10:56:44,604 DEBUG   SenderThread:11216 [sender.py:send():302] send: header
+2022-08-30 10:56:44,605 DEBUG   SenderThread:11216 [sender.py:send():302] send: run
+2022-08-30 10:56:44,932 INFO    SenderThread:11216 [sender.py:_maybe_setup_resume():578] checking resume status for None/CAPSTONE/2rd0tt7c
+2022-08-30 10:56:46,981 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: check_version
+2022-08-30 10:56:47,018 INFO    SenderThread:11216 [dir_watcher.py:__init__():216] watching files in: e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220830_105640-2rd0tt7c\files
+2022-08-30 10:56:47,018 INFO    SenderThread:11216 [sender.py:_start_run_threads():913] run started: 2rd0tt7c with start time 1661837201.722815
+2022-08-30 10:56:47,019 DEBUG   SenderThread:11216 [sender.py:send():302] send: summary
+2022-08-30 10:56:47,021 INFO    SenderThread:11216 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2022-08-30 10:56:47,023 DEBUG   SenderThread:11216 [sender.py:send_request():316] send_request: check_version
+2022-08-30 10:56:47,610 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: run_start
+2022-08-30 10:56:48,059 DEBUG   HandlerThread:11216 [meta.py:__init__():35] meta init
+2022-08-30 10:56:48,061 DEBUG   HandlerThread:11216 [meta.py:__init__():50] meta init done
+2022-08-30 10:56:48,061 DEBUG   HandlerThread:11216 [meta.py:probe():216] probe
+2022-08-30 10:56:48,060 INFO    Thread-18 :11216 [dir_watcher.py:_on_file_created():275] file/dir created: e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220830_105640-2rd0tt7c\files\wandb-summary.json
+2022-08-30 10:56:48,098 DEBUG   HandlerThread:11216 [meta.py:_setup_git():206] setup git
+2022-08-30 10:56:48,833 DEBUG   HandlerThread:11216 [meta.py:_setup_git():213] setup git done
+2022-08-30 10:56:48,833 DEBUG   HandlerThread:11216 [meta.py:_save_pip():54] save pip
+2022-08-30 10:56:48,839 DEBUG   HandlerThread:11216 [meta.py:_save_pip():68] save pip done
+2022-08-30 10:56:48,840 DEBUG   HandlerThread:11216 [meta.py:probe():254] probe done
+2022-08-30 10:56:49,079 INFO    Thread-18 :11216 [dir_watcher.py:_on_file_created():275] file/dir created: e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220830_105640-2rd0tt7c\files\requirements.txt
+2022-08-30 10:56:49,083 INFO    Thread-18 :11216 [dir_watcher.py:_on_file_created():275] file/dir created: e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220830_105640-2rd0tt7c\files\wandb-metadata.json
+2022-08-30 10:56:53,092 DEBUG   SenderThread:11216 [sender.py:send():302] send: files
+2022-08-30 10:56:53,093 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-30 10:56:53,094 INFO    SenderThread:11216 [sender.py:_save_file():1156] saving file wandb-metadata.json with policy now
+2022-08-30 10:56:53,103 DEBUG   SenderThread:11216 [sender.py:send_request():316] send_request: stop_status
+2022-08-30 10:56:53,445 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: pause
+2022-08-30 10:56:53,446 INFO    HandlerThread:11216 [handler.py:handle_request_pause():699] stopping system metrics thread
+2022-08-30 10:56:54,842 DEBUG   SenderThread:11216 [sender.py:send():302] send: telemetry
+2022-08-30 10:56:54,850 DEBUG   SenderThread:11216 [sender.py:send():302] send: metric
+2022-08-30 10:56:54,851 DEBUG   SenderThread:11216 [sender.py:send():302] send: telemetry
+2022-08-30 10:56:54,851 DEBUG   SenderThread:11216 [sender.py:send():302] send: metric
+2022-08-30 10:56:54,852 WARNING SenderThread:11216 [sender.py:send_metric():1112] Seen metric with glob (shouldn't happen)
+2022-08-30 10:56:54,870 DEBUG   SenderThread:11216 [sender.py:send():302] send: stats
+2022-08-30 10:56:55,210 INFO    Thread-18 :11216 [dir_watcher.py:_on_file_created():275] file/dir created: e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220830_105640-2rd0tt7c\files\output.log
+2022-08-30 10:56:55,874 INFO    Thread-24 :11216 [upload_job.py:push():138] Uploaded file C:\Users\Aviral\AppData\Local\Temp\tmpb47hyz6iwandb\4ctpdaf3-wandb-metadata.json
+2022-08-30 10:56:57,224 INFO    Thread-18 :11216 [dir_watcher.py:_on_file_modified():292] file/dir modified: e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220830_105640-2rd0tt7c\files\output.log
+2022-08-30 10:57:09,872 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-30 10:57:09,873 DEBUG   SenderThread:11216 [sender.py:send_request():316] send_request: stop_status
+2022-08-30 10:57:10,210 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: resume
+2022-08-30 10:57:10,210 INFO    HandlerThread:11216 [handler.py:handle_request_resume():690] starting system metrics thread
+2022-08-30 10:57:13,420 INFO    Thread-18 :11216 [dir_watcher.py:_on_file_modified():292] file/dir modified: e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220830_105640-2rd0tt7c\files\output.log
+2022-08-30 10:57:14,438 INFO    Thread-18 :11216 [dir_watcher.py:_on_file_modified():292] file/dir modified: e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220830_105640-2rd0tt7c\files\output.log
+2022-08-30 10:57:15,443 INFO    Thread-18 :11216 [dir_watcher.py:_on_file_modified():292] file/dir modified: e:\Sem 6\Capstone\CAPSTONE\NLP_Models\wandb\run-20220830_105640-2rd0tt7c\files\config.yaml
+2022-08-30 10:57:26,577 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-30 10:57:26,577 DEBUG   SenderThread:11216 [sender.py:send_request():316] send_request: stop_status
+2022-08-30 10:57:42,301 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-30 10:57:42,301 DEBUG   SenderThread:11216 [sender.py:send_request():316] send_request: stop_status
+2022-08-30 10:57:44,187 DEBUG   SenderThread:11216 [sender.py:send():302] send: stats
+2022-08-30 10:57:59,201 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-30 10:57:59,201 DEBUG   SenderThread:11216 [sender.py:send_request():316] send_request: stop_status
+2022-08-30 10:58:15,873 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-30 10:58:15,873 DEBUG   SenderThread:11216 [sender.py:send_request():316] send_request: stop_status
+2022-08-30 10:58:17,697 DEBUG   SenderThread:11216 [sender.py:send():302] send: stats
+2022-08-30 10:58:32,716 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-30 10:58:32,716 DEBUG   SenderThread:11216 [sender.py:send_request():316] send_request: stop_status
+2022-08-30 10:58:48,424 DEBUG   HandlerThread:11216 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-30 10:58:48,424 DEBUG   SenderThread:11216 [sender.py:send_request():316] send_request: stop_status
+2022-08-30 10:58:51,923 DEBUG   SenderThread:11216 [sender.py:send():302] send: stats
+2022-08-30 10:58:57,227 INFO    MainThread:11216 [internal.py:handle_exit():80] Internal process exited
