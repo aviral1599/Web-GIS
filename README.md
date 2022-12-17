@@ -22,6 +22,8 @@ Data - 48618
 Model - LSTM
 
 Accuracy - 87.8
+![Screenshot (1164)](https://user-images.githubusercontent.com/67017562/208221251-769df3de-a6ad-4572-9524-382a5b994d7b.png)
+
 
 ### 3.Location Extraction
 
@@ -36,7 +38,7 @@ OUTPUT : GIS Visualization of Crimes and Realtime Tweet Extraction
 
 ## Live Link 
 
-Video link : 
+Video link : https://drive.google.com/file/d/1Qv4esVMGv_weI1nLo-SVEM3mFPOVHPTj/view?usp=share_link
 
 Not Hosted on any Platform
 Working on Local Host : http://127.0.0.1:5000
