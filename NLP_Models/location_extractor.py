@@ -42,9 +42,14 @@ s_a[35]=" Adra | Alipurduar | Amlagora | Arambagh | Asansol | Balurghat | Bankur
 s_a = ['|'.join(list(map(str.strip, s_a[i].split("|")))) for i in range(len(s_a))]
 states = '|'.join(states_list)
 
-def get_locations(data, get_states=True, get_cities=False, get_state_of_cities=False):
+def get_locations(data, get_states=True, get_cities=False, get_state_of_cities=False, single_entry=False):
     locations = []
-    for item in (data.to_numpy()).tolist():
+    if not single_entry:
+        mod_data = (data.to_numpy()).tolist()
+    else:
+        mod_data = [data]
+    for item in mod_data:
+        print()
         st= []
         if get_states:
             st = st + re.findall(r"(?=("+states+r"))", item, re.IGNORECASE)
@@ -54,8 +59,6 @@ def get_locations(data, get_states=True, get_cities=False, get_state_of_cities=F
                     if states_list[i].lower() not in st:
                         st.append(states_list[i].lower())
         st = list(set(st))
-        # if len(st)>1:
-        #     print(st)
         locations.append(st if len(st)>0 else None)
     return locations
 

@@ -4,8 +4,11 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 class Custom_Preprocessor:
     def __init__(self, trunc_type = 'post', pad_type = 'post') -> None:
-        nltk.download('stopwords')
-
+        try:
+            nltk.data.find('corpora/stopwords')
+        except LookupError:
+            nltk.download('stopwords')
+    
         from nltk.corpus import stopwords
 
         self.STOPWORDS = set(stopwords.words('english'))
@@ -19,20 +22,16 @@ class Custom_Preprocessor:
         text_list = []
         word_count = []
 
-        if not single_entry:
-            for entry in data:
-                new_text = re.sub("[^a-zA-Z ]", " ", entry)
-                new_text = [word for word in new_text.lower().split() if word not in self.STOPWORDS]
-                word_count.append(len(new_text))
-                new_text = ' '.join(new_text)
-                text_list.append(new_text)
-        else:
-            new_text = re.sub("[^a-zA-Z ]", " ", data)
+        if single_entry:
+            data = [data]
+        
+        for entry in data:
+            new_text = re.sub("[^a-zA-Z ]", " ", entry)
             new_text = [word for word in new_text.lower().split() if word not in self.STOPWORDS]
             word_count.append(len(new_text))
             new_text = ' '.join(new_text)
-            text_list.append(new_text)
-        
+            text_list.append(new_text)    
+            
         if get_word_count:
             return text_list, word_count
         else:
