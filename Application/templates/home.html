@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Web GIS</title>
+    <link href=".\static\css\dist\output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  </head>
+  <body class="h-14 bg-gradient-to-r from-sky-500 to-indigo-500">
+    {% block content %}
+    
+    <nav class="bg-gray-800">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <!--
+                Icon when menu is closed.
+    
+                Heroicon name: outline/bars-3
+    
+                Menu open: "hidden", Menu closed: "block"
+              -->
+              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <!--
+                Icon when menu is open.
+    
+                Heroicon name: outline/x-mark
+    
+                Menu open: "block", Menu closed: "hidden"
+              -->
+              <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex flex-shrink-0 items-center">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M8.161 2.58a1.875 1.875 0 011.678 0l4.993 2.498c.106.052.23.052.336 0l3.869-1.935A1.875 1.875 0 0121.75 4.82v12.485c0 .71-.401 1.36-1.037 1.677l-4.875 2.437a1.875 1.875 0 01-1.676 0l-4.994-2.497a.375.375 0 00-.336 0l-3.868 1.935A1.875 1.875 0 012.25 19.18V6.695c0-.71.401-1.36 1.036-1.677l4.875-2.437zM9 6a.75.75 0 01.75.75V15a.75.75 0 01-1.5 0V6.75A.75.75 0 019 6zm6.75 3a.75.75 0 00-1.5 0v8.25a.75.75 0 001.5 0V9z" clip-rule="evenodd" />
+              </svg>
+              
+              <h1 class = "text-gray-300 ml-4">WEB GIS Application </h1>
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class=" absolute right-0">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">About</a>
+    
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+    
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Documentation</a>
+    
+                
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+    
+            <!-- Profile dropdown -->
+          </div>
+        </div>
+      </div>
+    
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pt-2 pb-3">
+          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+          <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">About</a>
+    
+          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+    
+          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Documentation</a>
+    
+          
+        </div>
+      </div>
+    </nav>
+
+
+<div class ="ml-16">
+    
+  <div class = "">
+      <label for="countries" class="block mb-2 mt-4 text-xl font-medium text-gray-900 dark:text-black-400 items-center">Select an option</label>
+      <form action="{{url_for('map')}}" method="post">
+          <select name="types" id="types" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-6/12 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option selected>Choose a Crime</option>  
+            {% for op in options %}
+              <option value="{{ op }}">{{ op }}</option>
+              {% endfor %}
+          </select>
+          <button type="submit" class="mt-4 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center" > Show </button>
+      </form>
+  </div>
+
+  <div class = "grid grid-cols-6">
+
+    
+    <div class="w-full max-w-full lg:w-9/12 lg:flex-none col-span-4">
+      <div class="relative z-20 flex flex-col min-w-0 break-words border-0 border-solid dark:bg-gray-950 border-black-125 shadow-soft-xl dark:shadow-soft-dark-xl rounded-2xl bg-clip-border">
+        <div class="pl-6 pb-0 mb-20 border-b-0 border-solid border-black-125 rounded-t-2xl">
+          <p class="leading-normal text-sm dark:opacity-60">
+            <i class="fa fa-arrow-up text-lime-500" aria-hidden="true"></i>
+          </p>
+        </div>
+          <div>
+            <div class = "mb-16">
+            <img src={{ url}} alt="Chart" class="rounded-lg">
+            </div>
+          </div>
+        </div>
+
+    </div> 
+    <div class="flex justify-center col-span-2 my-28 mr-5">
+      <div class="rounded-lg shadow-lg bg-red-200 max-w-7xl max-h-fit text-center">
+        <div>
+          <h2 class=" text-red-900 text-2xl font-medium mb-2 mt-2">Realtime Extraction of Tweets</h2>
+        </div>
+        <div class="p-6">
+          <h3 class="text-gray-900 text-l font-medium mb-2">Tweet</h3>
+          <div class="text-gray-700 text-base mb-4" id= "desc">
+            Description of the Tweet
+          </div>
+        </div>
+        <div>
+          <h6 class="border-t text-gray-900 text-l font-medium pt-4 ">Crime Type</h6>
+          <div class="py-3  text-gray-600" id = "crimetype">
+            Type of Crime
+          </div>
+        </div>
+        <div>
+          <h6 class="border-t text-gray-900 text-l font-medium pt-4">Location</h6>
+        <div class="py-3 text-gray-600" id = "location">
+          Location of Crime
+        </div>
+      </div>
+      </div>
+    </div>
+    
+  </div>
+    {% endblock %}
+    <script type = "text/javascript">
+      var desc1 = {{ desc | tojson}};
+      var crimet = {{ crimetype | tojson}};
+      var loc = {{ location | tojson}};
+      var counter = Math.floor((Math.random() * 200) + 1);
+      var elem1 = document.getElementById("desc");
+      var elem2 = document.getElementById("crimetype");
+      var elem3 = document.getElementById("location");
+      var inst = setInterval(change, 5000);
+      
+      function change() {
+        elem1.innerHTML = desc1[counter];
+        elem2.innerHTML = crimet[counter];
+        elem3.innerHTML = loc[counter];
+        counter++;
+        if (counter >= desc1.length) {
+          counter = Math.floor((Math.random() * 200) + 1);
+          // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
+        }
+      }
+    </script>
+  </body>
+</html>
