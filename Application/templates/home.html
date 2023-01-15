@@ -112,7 +112,7 @@
         </div>
           <div>
             <div class = "mb-16">
-            <img src={{ url}} alt="Chart" class="rounded-lg">
+            <img src={{url}} alt="Chart" class="rounded-lg">
             </div>
           </div>
         </div>
@@ -121,26 +121,31 @@
     <div class="flex justify-center col-span-2 my-28 mr-5">
       <div class="rounded-lg shadow-lg bg-red-200 max-w-7xl max-h-fit text-center">
         <div>
-          <h2 class=" text-red-900 text-2xl font-medium mb-2 mt-2">Realtime Extraction of Tweets</h2>
+          <h2 class=" text-red-900 text-2xl font-medium mb-2 mt-2">Prediction of Tweets</h2>
         </div>
         <div class="p-6">
-          <h3 class="text-gray-900 text-l font-medium mb-2">Tweet</h3>
-          <label for="countries" class="block mb-2 mt-4 text-xl font-medium text-gray-900 dark:text-black-400 items-center">Tweet</label>
-      <form action="{{url_for('map')}}" method="post">
-          <input name="texttw" id="texttw" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-6/12 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          <label for="countries" class="block mb-2 mt-4 text-xl font-medium text-gray-900 dark:text-black-400 items-center">Enter Tweet</label>
+      <form action="{{url_for('predict')}}" method="post">
+          <input name="texttw" id="texttw" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-6/12 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-16 w-fit">
           <button type="submit" class="mt-4 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center" > Show </button>
       </form>
         </div>
         <div>
+          <h6 class="border-t text-gray-900 text-l font-medium pt-4 ">Tweet</h6>
+          <div class="py-3  text-gray-600" id = "crimetype">
+            {{desc}}
+          </div>
+        </div>
+        <div>
           <h6 class="border-t text-gray-900 text-l font-medium pt-4 ">Crime Type</h6>
           <div class="py-3  text-gray-600" id = "crimetype">
-            Type of Crime
+            {{crimetype}}
           </div>
         </div>
         <div>
           <h6 class="border-t text-gray-900 text-l font-medium pt-4">Location</h6>
         <div class="py-3 text-gray-600" id = "location">
-          Location of Crime
+          {{location}}
         </div>
       </div>
       </div>
@@ -148,26 +153,5 @@
     
   </div>
     {% endblock %}
-    <script type = "text/javascript">
-      var desc1 = {{ desc | tojson}};
-      var crimet = {{ crimetype | tojson}};
-      var loc = {{ location | tojson}};
-      var counter = Math.floor((Math.random() * 200) + 1);
-      var elem1 = document.getElementById("desc");
-      var elem2 = document.getElementById("crimetype");
-      var elem3 = document.getElementById("location");
-      var inst = setInterval(change, 10000);
-      
-      function change() {
-        elem1.innerHTML = desc1[counter];
-        elem2.innerHTML = crimet[counter];
-        elem3.innerHTML = loc[counter];
-        counter++;
-        if (counter >= desc1.length) {
-          counter = Math.floor((Math.random() * 200) + 1);
-          // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
-        }
-      }
-    </script>
   </body>
 </html>

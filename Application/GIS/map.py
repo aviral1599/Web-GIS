@@ -15,7 +15,7 @@ def plotting():
     print(df)
     # print(df)
 
-    fp = "GIS\Indian_States.shp"
+    fp = "Application\GIS\Indian_States.shp"
     map_df = gpd.read_file(fp)
     print(map_df.head())
 
