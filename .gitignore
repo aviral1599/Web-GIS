@@ -1,3 +1,4 @@
 config.py
 __pycache__
 /NLP_Models/BERT/uncased_L-12_H-768_A-12/
+/NLP_Models/Bert_Weights/
