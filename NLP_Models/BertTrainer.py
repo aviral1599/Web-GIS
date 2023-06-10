@@ -14,6 +14,10 @@ class Custom_Trainer:
         self.labels = labels
         self.label_column = LABEL_COLUMN
 
+    def set_model_tokenizer(self, model, tokenizer):
+        self.model = model
+        self.tokenizer = tokenizer
+
     def preprocess_data_x(self, data, get_word_count = False, single_entry=False):
         text_list = []
         word_count = []
@@ -23,7 +27,7 @@ class Custom_Trainer:
         
         for entry in data:
             new_text = re.sub("[^a-zA-Z ]", " ", entry)
-            new_text = [word for word in new_text.lower().split() if word not in self.STOPWORDS]
+            new_text = new_text.lower().split()
             word_count.append(len(new_text))
             new_text = ' '.join(new_text)
             text_list.append(new_text)    
@@ -33,21 +37,21 @@ class Custom_Trainer:
         else:
             return text_list
 
-    def train(self, model, train_data, val_data, tokenizer, early_stop = False) -> None:
-        train = Dataset(train_data, tokenizer, self.labels, self.label_column)
-        val = Dataset(val_data, tokenizer, self.labels, self.label_column)
+    def train(self, train_data, val_data, early_stop = False) -> None:
+        train = Dataset(train_data, self.tokenizer, self.labels, self.label_column)
+        # val = Dataset(val_data, tokenizer, self.labels, self.label_column)
 
         train_dataloader = torch.utils.data.DataLoader(train, batch_size=self.batch_size, shuffle=True)
-        val_dataloader = torch.utils.data.DataLoader(val, batch_size=self.batch_size)
+        # val_dataloader = torch.utils.data.DataLoader(val, batch_size=self.batch_size)
 
         use_cuda = torch.cuda.is_available()
         device = torch.device("cuda:0" if use_cuda else "cpu")
 
         criterion = torch.nn.CrossEntropyLoss()
-        optimizer = Adam(model.parameters(), lr=self.lr, weight_decay=self.decay)
+        optimizer = Adam(self.model.parameters(), lr=self.lr, weight_decay=self.decay)
 
         if use_cuda:
-                model = model.cuda()
+                self.model = self.model.cuda()
                 criterion = criterion.cuda()
 
         for epoch_num in range(self.epochs):
@@ -61,7 +65,7 @@ class Custom_Trainer:
                     mask = train_input['attention_mask'].to(device)
                     input_id = train_input['input_ids'].squeeze(1).to(device)
 
-                    output = model(input_id, mask)
+                    output = self.model(input_id, mask)
                     
                     batch_loss = criterion(output, train_label.long())
                     total_loss_train += batch_loss.item()
@@ -69,44 +73,54 @@ class Custom_Trainer:
                     acc = (output.argmax(dim=1) == train_label).sum().item()
                     total_acc_train += acc
 
-                    model.zero_grad()
+                    self.model.zero_grad()
                     batch_loss.backward()
                     optimizer.step()
 
-                with torch.no_grad():
-                    for val_input, val_label in val_dataloader:
-                        val_label = val_label.to(device)
-                        mask = val_input['attention_mask'].to(device)
-                        input_id = val_input['input_ids'].squeeze(1).to(device)
+                val_accuracy, val_loss = self.evaluate(val_data)
+                # with torch.no_grad():
+                #     for val_input, val_label in val_dataloader:
+                #         val_label = val_label.to(device)
+                #         mask = val_input['attention_mask'].to(device)
+                #         input_id = val_input['input_ids'].squeeze(1).to(device)
 
-                        output = model(input_id, mask)
+                #         output = model(input_id, mask)
 
-                        batch_loss = criterion(output, val_label.long())
-                        total_loss_val += batch_loss.item()
+                #         batch_loss = criterion(output, val_label.long())
+                #         total_loss_val += batch_loss.item()
                         
-                        acc = (output.argmax(dim=1) == val_label).sum().item()
-                        total_acc_val += acc
+                #         acc = (output.argmax(dim=1) == val_label).sum().item()
+                #         total_acc_val += acc
             
                 print(f"Epochs: {epoch_num + 1} "\
-                        "| Train Loss: {total_loss_train / len(train_data): .3f} "\
-                        "| Train Accuracy: {total_acc_train / len(train_data): .3f} "\
-                        "| Val Loss: {total_loss_val / len(val_data): .3f} "\
-                        "| Val Accuracy: {total_acc_val / len(val_data): .3f}")
+                        f"| Train Loss: {total_loss_train / len(train_data): .3f} "\
+                        f"| Train Accuracy: {total_acc_train / len(train_data): .3f} "\
+                        # f"| Val Loss: {total_loss_val / len(val_data): .3f} "\
+                        # f"| Val Accuracy: {total_acc_val / len(val_data): .3f}")
+                        f"| Val Loss: {val_loss: .3f} "\
+                        f"| Val Accuracy: {val_accuracy: .3f}")
 
-    def evaluate(self, model, test_data, tokenizer) -> float:
+    def evaluate(self, test_data, get_output=False) -> tuple:
     
-        test = Dataset(test_data, tokenizer, self.labels, self.label_column)
+        test = Dataset(test_data, self.tokenizer, self.labels, self.label_column)
 
         test_dataloader = torch.utils.data.DataLoader(test, batch_size=self.batch_size)
+
+        criterion = torch.nn.CrossEntropyLoss()
 
         use_cuda = torch.cuda.is_available()
         device = torch.device("cuda" if use_cuda else "cpu")
 
         if use_cuda:
 
-            model = model.cuda()
+            self.model = self.model.cuda()
+            criterion = criterion.cuda()
 
         total_acc_test = 0
+        total_loss_test = 0
+        test_output=[]
+        test_labels = []
+
         with torch.no_grad():
 
             for test_input, test_label in test_dataloader:
@@ -115,11 +129,21 @@ class Custom_Trainer:
                 mask = test_input['attention_mask'].to(device)
                 input_id = test_input['input_ids'].squeeze(1).to(device)
 
-                output = model(input_id, mask)
+                output = self.model(input_id, mask)
+
+                test_output.extend(output.argmax(dim=1))
+                test_labels.extend(test_label)
+
+                batch_loss = criterion(output, test_label.long())
+                total_loss_test = total_loss_test + batch_loss.item()
 
                 acc = (output.argmax(dim=1) == test_label).sum().item()
                 total_acc_test += acc
-        test_accuracy = total_acc_test / len(test_data)
-        print(f'Test Accuracy: {test_accuracy: .3f}')
 
-        return test_accuracy
+        test_accuracy = total_acc_test / len(test_data)
+        test_loss = total_loss_test / len(test_data)
+
+        if get_output:
+            return test_accuracy, test_loss, test_output, test_labels
+        else:
+            return test_accuracy, test_loss
